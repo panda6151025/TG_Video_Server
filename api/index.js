@@ -12,10 +12,8 @@ app.use(cors());
 app.use(bodyParser.json({ limit: "4gb" })); // Increase the limit for JSON requests
 app.use(express.urlencoded({ extended: true, limit: "4gb" })); // Increase the limit for form data
 
-// Connect to MongoDB
 connectDB();
 
-// Define your routes here (example)
 app.get("/", (req, res) => {
   res.send("API is running...");
 });
