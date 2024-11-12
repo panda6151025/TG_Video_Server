@@ -9,8 +9,8 @@ const boatRoutes = require("./routes/VidoeRoutes");
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit: "4gb" })); // Increase the limit for JSON requests
+app.use(express.urlencoded({ extended: true, limit: "4gb" })); // Increase the limit for form data
 
 // Connect to MongoDB
 connectDB();
